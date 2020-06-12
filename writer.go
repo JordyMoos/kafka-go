@@ -567,7 +567,6 @@ func newWriter(partition int, config WriterConfig, stats *writerStats) *writer {
 
 func (w *writer) close() {
 	close(w.msgs)
-	w.join.Wait()
 }
 
 func (w *writer) messages() chan<- writerMessage {
